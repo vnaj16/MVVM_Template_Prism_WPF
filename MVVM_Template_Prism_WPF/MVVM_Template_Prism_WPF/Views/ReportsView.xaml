@@ -15,7 +15,7 @@
 
         <TextBlock Text="Reportes con RDCL Report Viewer y WinForms Host" Grid.Row="0" HorizontalAlignment="Center" FontSize="18" Margin="5"/>
         <WindowsFormsHost Grid.Row="1" HorizontalAlignment="Left" Height="365" VerticalAlignment="Top" Width="772" Margin="10,10,0,0">
-            <rv:ReportViewer/>
+            <rv:ReportViewer x:Name="ReportViewerDemo"/>
         </WindowsFormsHost>
 
     </Grid>

@@ -1,4 +1,6 @@
-﻿using System;
+﻿using Microsoft.Reporting.WinForms;
+using MVVM_Template_Prism_WPF.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +24,14 @@ namespace MVVM_Template_Prism_WPF.Views
         public ReportsView()
         {
             InitializeComponent();
+
+            ReportViewerDemo.Reset();
+            ReportDataSource reportDataSource = new ReportDataSource("DataSet1",RegistroNacional.Instance.ListaCiudades);
+            ReportViewerDemo.LocalReport.DataSources.Add(reportDataSource);
+
+            ReportViewerDemo.LocalReport.ReportEmbeddedResource = "MVVM_Template_Prism_WPF.Report1.rdlc";
+
+            ReportViewerDemo.RefreshReport();
         }
     }
 }

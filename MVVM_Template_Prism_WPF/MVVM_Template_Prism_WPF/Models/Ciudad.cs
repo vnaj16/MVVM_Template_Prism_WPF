@@ -25,6 +25,7 @@ namespace MVVM_Template_Prism_WPF.Models
 			}
 		}
 
+		//ID,Nombre, Area
 
 		private string nombre;
 
@@ -57,6 +58,10 @@ namespace MVVM_Template_Prism_WPF.Models
 			set { SetProperty(ref habitantes, value);}
 		}
 
+		public int NHabitantes
+		{
+			get => Habitantes.Count;
+		}
 
 		public override string ToString()
 		{
