@@ -1,0 +1,25 @@
+﻿<Window x:Class="MVVM_Template_Prism_WPF.Views.Persona.EliminarTelefonoView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Template_Prism_WPF.Views.Persona"
+        mc:Ignorable="d"
+        Title="EliminarTelefonoView" Height="200" Width="250" WindowStartupLocation="CenterScreen">
+    <StackPanel Orientation="Vertical">
+        <TextBlock Text="Eliminar Telefono" HorizontalAlignment="Center"/>
+        <StackPanel Margin="5,10,0,0" Orientation="Horizontal">
+            <TextBlock Text="Nombre: "/>
+            <TextBlock x:Name="TextBlock_Nombre" />
+        </StackPanel>
+        <TextBlock Text="Seleccione el numero a eliminar" Margin="5,20,0,0"/>
+        <StackPanel Orientation="Horizontal" Margin="5,10,0,0">
+            <TextBlock Text="Numero: " />
+            <ComboBox Name="ComboBox_Telefonos"></ComboBox>
+        </StackPanel>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,20,0,0">
+            <Button Content="Eliminar" Margin="0,0,20,0" Click="Button_Click"/>
+            <Button Content="Regresar" Name="Button_Regresar" Click="Button_Regresar_Click"/>
+        </StackPanel>
+    </StackPanel>
+</Window>

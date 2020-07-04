@@ -1,0 +1,60 @@
+﻿<Window x:Class="MVVM_Template_Prism_WPF.Views.Persona.RegistrarPersonaView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:MVVM_Template_Prism_WPF.Views.Persona"
+        mc:Ignorable="d"
+        Title="RegistrarPersonaView" Height="528.261" Width="357.115" WindowStartupLocation="CenterScreen">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Text="Registrar Persona" HorizontalAlignment="Center" Margin="0,10,0,10"/>
+        <StackPanel Orientation="Vertical" Grid.Row="1" HorizontalAlignment="Center">
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="DNI: "/>
+                    <TextBox Text="{Binding DNI, Mode=TwoWay}" MinWidth="100"/>
+                </StackPanel>
+            </Label>
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Nombre: "/>
+                    <TextBox Text="{Binding Nombre, Mode=TwoWay}" MinWidth="100"/>
+                </StackPanel>
+            </Label>
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Apellido: "/>
+                    <TextBox Text="{Binding Apellido, Mode=TwoWay}" MinWidth="100"/>
+                </StackPanel>
+            </Label>
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Fecha Nacimiento: "/>
+                    <DatePicker SelectedDate="{Binding FechaNacimiento, Mode=TwoWay}" VerticalAlignment="Top"/>
+                </StackPanel>
+            </Label>
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Sueldo: "/>
+                    <TextBox Text="{Binding Sueldo, Mode=TwoWay}" MinWidth="100"/>
+                </StackPanel>
+            </Label>
+            <Label>
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="Ciudad: "/>
+                    <ComboBox Name="ComboBox_Ciudades" SelectedItem="{Binding Ciudad}" MinWidth="100"/>
+                </StackPanel>
+            </Label>
+        </StackPanel>
+        <StackPanel Grid.Row="2" Orientation="Horizontal" HorizontalAlignment="Center" Margin="0,0,0,20">
+            <Button Name="Button_Registrar" Margin="0,0,20,0" Click="Button_Registrar_Click"/>
+            <Button Content="Regresar" Name="Button_Regresar" Click="Button_Regresar_Click" />
+        </StackPanel>
+
+    </Grid>
+</Window>

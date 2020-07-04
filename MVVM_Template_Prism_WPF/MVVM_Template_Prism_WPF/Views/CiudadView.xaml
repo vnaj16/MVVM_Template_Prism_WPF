@@ -1,0 +1,46 @@
+﻿<UserControl x:Class="MVVM_Template_Prism_WPF.Views.CiudadView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MVVM_Template_Prism_WPF.Views"
+
+             mc:Ignorable="d" 
+             Background="White"
+             d:DesignHeight="450" d:DesignWidth="800">
+    <Grid>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <TextBlock Text="CIUDAD VIEW" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="15"/>
+            <DataGrid ItemsSource="{Binding ListaCiudades}" SelectedItem="{Binding CurrentCiudad}" AutoGenerateColumns="False" MaxHeight="200" VerticalScrollBarVisibility="Auto">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Header="ID" Binding="{Binding ID}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" IsReadOnly="True"/>
+                    <DataGridTextColumn Header="Area (Km2)" Binding="{Binding Area}" IsReadOnly="True"/>
+                    <DataGridTemplateColumn Header="Habitantes">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <TextBlock Text="{Binding Path=Habitantes.Count}"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                        <DataGridTemplateColumn.CellEditingTemplate>
+                            <DataTemplate>
+                                <ComboBox ItemsSource="{Binding Habitantes}" DisplayMemberPath="Nombre"/>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellEditingTemplate>
+                        </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+
+
+            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" Margin="10">
+                <Button Content="Ver Info" Margin="0,0,20,0" Command="{Binding VerInfoCommand}" Width="80" Height="Auto"/>
+                <Button Content="Agregar"  Margin="0,0,20,0" Command="{Binding AgregarCommand}" Width="80" Height="Auto"/>
+                <Button Content="Actualizar"  Margin="0,0,20,0" Command="{Binding ActualizarCommand}" Width="80" Height="Auto"/>
+                <Button Content="Eliminar"  Command="{Binding DeleteCommand}" Width="80" Height="Auto"/>
+            </StackPanel>
+
+        </StackPanel>
+        <Button Content="Reports" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,100,20" Click="Button_Click1"/>
+        <Button Content="Charts" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,0,20,20" Click="Button_Click"/>
+    </Grid>
+</UserControl>
